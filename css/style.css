@@ -1,0 +1,689 @@
+/* =========================================================
+   Drishti Eyewear — Dark Theme
+   Tokens
+========================================================= */
+:root {
+    --bg: #0B0D10;
+    --bg-alt: #14171C;
+    --panel: #1B1F26;
+    --text: #EDEAE2;
+    --text-muted: #9BA0A6;
+    --gold: #C9A15A;
+    --gold-light: #E4C285;
+    --teal: #3E625A;
+    --border: rgba(201, 161, 90, 0.16);
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    --radius: 18px;
+    --font-display: "Fraunces", serif;
+    --font-body: "Inter", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.eyebrow {
+    font-family: var(--font-body);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+}
+
+.section-heading {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin-bottom: 2rem;
+    color: var(--text);
+}
+
+/* =========================================================
+   Buttons
+========================================================= */
+.btn-gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: #12130f;
+    font-weight: 600;
+    padding: 0.75rem 1.6rem;
+    border-radius: 999px;
+    border: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: inline-block;
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(201, 161, 90, 0.35);
+    color: #12130f;
+}
+
+.btn-gold-outline {
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-gold-outline:hover {
+    background: var(--gold);
+    color: #12130f;
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    color: var(--text);
+    font-weight: 500;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease, gap 0.3s ease;
+}
+
+.btn-ghost:hover {
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+}
+
+.btn-ghost i {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn-ghost:hover i {
+    transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   1. Announcement Bar
+========================================================= */
+.announce-bar {
+    background: var(--gold);
+    color: #14130d;
+    font-size: 0.8rem;
+    padding: 0.45rem 0;
+}
+
+.announce-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    font-weight: 500;
+}
+
+.announce-sep {
+    opacity: 0.5;
+}
+
+.announce-cta {
+    color: #14130d;
+    text-decoration: underline;
+}
+
+/* =========================================================
+   2. Navigation
+========================================================= */
+.main-nav {
+    background: transparent;
+    padding: 1.1rem 0;
+    transition: background 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.main-nav.scrolled {
+    background: rgba(11, 13, 16, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.brand-logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--text) !important;
+    font-weight: 600;
+}
+
+.brand-logo span {
+    color: var(--gold);
+}
+
+.nav-links .nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    margin: 0 0.85rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.25s ease;
+}
+
+.nav-links .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
+    color: var(--text) !important;
+}
+
+.nav-links .nav-link:hover::after,
+.nav-links .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border-color: var(--border);
+}
+
+/* =========================================================
+   Lens frame — signature element
+========================================================= */
+.lens-frame {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    
+    isolation: isolate;
+}
+.lens-frame:hover{
+    border: 1px solid goldenrod;
+    
+}
+
+.lens-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.lens-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 0%;
+    /* border: 1px solid var(--gold); */
+    opacity: 0.55;
+    pointer-events: none;
+    transition: box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+.lens-frame:hover .lens-ring {
+    box-shadow: 0 0 0 6px rgba(201, 161, 90, 0.12);
+    opacity: 1;
+}
+
+.lens-frame:hover img {
+    transform: scale(1.08);
+}
+
+.lens-frame-wide {
+    aspect-ratio: 1/1;
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.lens-frame-hero {
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.lens-glint {
+    position: absolute;
+    inset: -100%;
+    background: conic-gradient(from 0deg, transparent 0deg, rgba(228, 194, 133, 0.35) 8deg, transparent 26deg, transparent 360deg);
+    animation: rotate-glint 6s linear infinite;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+@keyframes rotate-glint {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   3. Hero
+========================================================= */
+.hero {
+    padding: 6rem 0 5rem;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(201, 161, 90, 0.10), transparent 45%),
+        radial-gradient(circle at 10% 90%, rgba(62, 98, 90, 0.18), transparent 40%),
+        var(--bg);
+}
+
+.hero-heading {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    line-height: 1.12;
+    margin-bottom: 1.3rem;
+}
+
+.hero-heading em {
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    max-width: 460px;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* =========================================================
+   4. Trust Section
+========================================================= */
+.trust-section {
+    padding: 3.5rem 0;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.trust-card {
+    text-align: center;
+    padding: 1.2rem 0.6rem;
+    border-radius: var(--radius);
+    transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.trust-card:hover {
+    transform: translateY(-6px);
+    background: var(--panel);
+}
+
+.trust-card i {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+    display: inline-block;
+    transition: transform 0.35s ease;
+}
+
+.trust-card:hover i {
+    transform: scale(1.15) rotate(-6deg);
+}
+
+.trust-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.trust-card p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+/* =========================================================
+   5. Collections
+========================================================= */
+.collections-section {
+    padding: 6rem 0;
+}
+
+.category-card {
+    text-align: center;
+}
+
+.category-card .lens-frame {
+    max-width: 220px;
+    margin: 0 auto 1.3rem;
+}
+
+.category-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.category-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   6. Brand Section
+========================================================= */
+.brand-section {
+    padding: 6rem 0;
+    background: var(--bg-alt);
+}
+
+.brand-copy {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin-bottom: 1.8rem;
+}
+
+/* =========================================================
+   7. Why Choose Us
+========================================================= */
+.why-section {
+    padding: 6rem 0;
+}
+
+.why-card {
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    height: 100%;
+    transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+    background: var(--panel);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    background: linear-gradient(160deg, var(--panel), #20262f);
+}
+
+.why-card i {
+    font-size: 1.7rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.why-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.why-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 0;
+}
+
+/* =========================================================
+   8. Testimonials
+========================================================= */
+.testimonial-section {
+    padding: 6rem 0;
+    background: var(--bg-alt);
+}
+
+.testimonial-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.quote-mark {
+    font-size: 1.8rem;
+    color: var(--gold);
+    opacity: 0.6;
+}
+
+.testimonial-card p {
+    color: var(--text);
+    font-style: italic;
+    margin: 1rem 0 1.5rem;
+    line-height: 1.6;
+}
+
+.testimonial-person {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.testimonial-person img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--gold);
+}
+
+.testimonial-person h5 {
+    font-size: 0.95rem;
+    margin: 0;
+    color: var(--text);
+}
+
+.testimonial-person span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   9. Final CTA
+========================================================= */
+.final-cta {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #171b1a, #0B0D10 60%);
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(201, 161, 90, 0.15), transparent 70%);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.final-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+.final-cta p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.final-cta button {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: #12130f;
+    font-weight: 600;
+    padding: 0.75rem 1.6rem;
+    border-radius: 999px;
+    border: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: inline-block;
+}
+.final-cta button:hover{
+     transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(211, 158, 67, 0.35);
+    color: #12130f;
+}
+
+/* =========================================================
+   10. Footer
+========================================================= */
+.site-footer {
+    background: #08090B;
+    padding: 5rem 0 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.footer-about {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 320px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.9rem;
+    margin-top: 1.2rem;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--gold);
+    color: #14130d;
+    border-color: var(--gold);
+    transform: translateY(-4px);
+}
+
+.site-footer h5 {
+    font-family: var(--font-display);
+    color: var(--text);
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-links li a {
+    color: var(--text-muted);
+    transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.footer-links li a:hover {
+    color: var(--gold-light);
+    padding-left: 4px;
+}
+
+.site-footer hr {
+    border-color: var(--border);
+    margin: 2.5rem 0 1.5rem;
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+}
+
+/* =========================================================
+   Scroll Reveal
+========================================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+@media (max-width: 991px) {
+    .nav-links {
+        margin: 1rem 0;
+    }
+
+    .nav-links .nav-link {
+        margin: 0.4rem 0;
+    }
+
+    .hero {
+        padding: 3.5rem 0;
+        text-align: center;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

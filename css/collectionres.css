@@ -1,0 +1,354 @@
+/* =========================================================================
+   COLLECTIONS PAGE — RESPONSIVE ADDITIONS ONLY
+   Load this file AFTER css/collection.css in collection.html:
+
+   <link rel="stylesheet" href="css/collection.css">
+   <link rel="stylesheet" href="css/responsive.css">
+
+   Nothing in collection.css needs to change. This file only adds new
+   breakpoints (and a few more-specific overrides that win on cascade
+   order) so the page holds up on tablets, small tablets, large phones,
+   and small phones.
+   ========================================================================= */
+
+/* ---------- Global overflow safety net (same fix pattern used on
+   eyecare.html) so nothing can force a horizontal scrollbar on any
+   screen size. ---------- */
+html {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 100vw;
+}
+
+.container,
+.container-fluid {
+    max-width: 100%;
+}
+
+/* =====================================================
+   NAV — mobile dropdown panel
+   ===================================================== */
+@media (max-width: 991px) {
+    .main-nav .container {
+        flex-wrap: wrap;
+    }
+
+    .navbar-collapse {
+        background: rgba(14, 17, 21, 0.98);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        margin-top: 16px;
+        padding: 22px 20px;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin: 0 0 18px !important;
+        width: 100%;
+    }
+
+    .nav-links .nav-item {
+        width: 100%;
+    }
+
+    .nav-links .nav-link {
+        display: block;
+        margin: 0;
+        padding: 10px 4px;
+        width: 100%;
+    }
+
+    .navbar-collapse .btn-gold-outline {
+        display: inline-flex;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .brand-logo {
+        font-size: 1.35rem;
+    }
+}
+
+/* =====================================================
+   1. HERO
+   ===================================================== */
+@media (max-width: 991px) {
+    .coll-hero {
+        height: auto;
+        min-height: 70vh;
+        padding-top: 120px;
+    }
+
+    .coll-hero-content {
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 575px) {
+    .coll-hero {
+        min-height: 62vh;
+        padding-top: 110px;
+    }
+
+    .coll-hero-content {
+        padding-bottom: 40px;
+    }
+
+    .coll-hero-content h1 {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
+
+    .coll-hero-content .lead {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+}
+
+/* =====================================================
+   2 & 3. MEN'S / WOMEN'S — split rows
+   ===================================================== */
+@media (max-width: 991px) {
+    .split-collection {
+        padding: 90px 0 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .split-collection {
+        padding: 70px 0 10px;
+    }
+
+    .split-row {
+        margin-bottom: 50px;
+    }
+
+    .split-img img {
+        height: 280px;
+    }
+
+    .split-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .split-text p {
+        font-size: 0.92rem;
+        margin-bottom: 22px;
+    }
+
+    .btn-gold,
+    .btn-gold-outline {
+        padding: 13px 24px;
+        font-size: 0.76rem;
+    }
+}
+
+/* =====================================================
+   4 & 5. SUNGLASSES / BLUE LIGHT — feature cards
+   ===================================================== */
+@media (max-width: 575px) {
+    .feature-card {
+        height: 300px;
+        margin-bottom: 18px;
+        margin-left: 20px;
+        margin-right: 20px !important;
+       
+    }
+
+    .feature-card-content {
+        padding: 24px;
+    }
+
+    .feature-card-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* =====================================================
+   6. PREMIUM COLLECTION — banner
+   ===================================================== */
+@media (max-width: 991px) {
+    .premium-banner {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 575px) {
+    .premium-img {
+        min-height: 240px;
+    }
+
+    .premium-content {
+        padding: 34px 22px;
+    }
+
+    .premium-stats {
+        gap: 22px;
+        margin-bottom: 26px;
+    }
+
+    .premium-stats div strong {
+        font-size: 1.3rem;
+    }
+}
+
+/* =====================================================
+   7. FRAME SHAPES GUIDE
+   ===================================================== */
+@media (max-width: 991px) {
+    .frame-shapes {
+        padding: 100px 0 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .frame-shapes {
+        padding: 70px 0 10px;
+    }
+
+    .shape-card {
+        padding: 30px 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .shape-icon {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 16px;
+    }
+}
+
+/* =====================================================
+   8. CRAFTSMANSHIP
+   ===================================================== */
+@media (max-width: 991px) {
+    .craft-section {
+        padding: 100px 0 20px;
+        margin-left: 20px;
+
+  }
+}
+
+@media (max-width: 575px) {
+    .craft-section {
+        padding: 70px 0 10px;
+        margin-left: 20px;
+       
+    }
+
+    .craft-img img {
+        height: 260px;
+        /* padding: 20px; */
+    }
+
+    .craft-text h2 {
+        font-size: 1.7rem;
+    }
+
+    .craft-list li {
+        font-size: 0.88rem;
+        gap: 12px;
+    }
+
+    .craft-list li span.desc {
+        font-size: 0.8rem;
+    }
+}
+
+/* =====================================================
+   9. LOOKBOOK
+   ===================================================== */
+@media (max-width: 991px) {
+    .lookbook {
+        padding: 100px 0 90px;
+    }
+}
+
+@media (max-width: 575px) {
+    .lookbook {
+        padding: 70px 0 60px;
+    }
+
+    .lookbook-item {
+        margin-bottom: 14px;
+    }
+
+    .lookbook-caption {
+        font-size: 0.85rem;
+        padding: 14px;
+    }
+}
+
+/* Below ~420px a 2-up lookbook grid gets cramped, so stack to one
+   column for readability. This only changes layout width, not markup. */
+@media (max-width: 420px) {
+    .lookbook .col-6 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}
+
+/* =====================================================
+   10. FOOTER
+   ===================================================== */
+@media (max-width: 991px) {
+    .site-footer {
+        padding: 4rem 0 2rem;
+    }
+
+    .site-footer [class^="col-"] {
+        margin-bottom: 30px;
+    }
+
+    .footer-about {
+        max-width: 100%;
+    }
+    .land{
+        margin: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .site-footer {
+        padding: 3rem 0 1.5rem;
+        text-align: left;
+    }
+
+    .site-footer h5 {
+        font-size: 1rem;
+    }
+    .land{
+        margin: 20px;
+    }
+}
+
+/* =====================================================
+   Fine-tune for very small phones (≤ 375px)
+   ===================================================== */
+@media (max-width: 375px) {
+    .coll-hero-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .split-img img,
+    .craft-img img {
+        height: 220px;
+    }
+
+    .premium-stats {
+        gap: 16px;
+    }
+
+    .shape-card h4 {
+        font-size: 1.05rem;
+    }
+}

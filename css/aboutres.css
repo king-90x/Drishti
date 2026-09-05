@@ -1,0 +1,90 @@
+/* =========================================================
+   ABOUT PAGE — RESPONSIVE OVERRIDES ONLY
+   Loaded after about.css. No structural CSS lives here.
+   ========================================================= */
+
+/* ---------- Tablets (≤ 991.98px) ---------- */
+@media (max-width: 991.98px){
+
+    .ahd-hero{ min-height: 62vh; }
+
+    .story-section,
+    .timeline-section,
+    .values-section,
+    .experts-section,
+    .locations-section,
+    .gallery-section,
+    .contact-section{
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .final-cta{ padding-top: 64px; padding-bottom: 64px; }
+
+    .story-img{ height: 340px; }
+
+    /* Timeline collapses to a vertical stack */
+    .timeline{
+        flex-direction: column;
+        gap: 18px;
+    }
+    .timeline::before{
+        top: 0;
+        bottom: 0;
+        left: 24px;
+        right: auto;
+        width: 1px;
+        height: auto;
+        background: linear-gradient(180deg, transparent, var(--border) 10%, var(--border) 90%, transparent);
+    }
+    .timeline-item{
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        gap: 18px;
+    }
+    .timeline-marker{ margin-bottom: 0; flex-shrink: 0; }
+    .timeline-card{ flex: 1; }
+
+    .contact-form-panel{ padding: 30px; }
+}
+
+/* ---------- Small tablets / large phones (≤ 767.98px) ---------- */
+@media (max-width: 767.98px){
+
+    .ahd-hero{ min-height: 56vh; }
+    .ahd-hero-content{ padding-top: 40px; padding-bottom: 40px; }
+    .hero-intro{ font-size: .96rem; }
+
+    .section-title{ font-size: clamp(1.6rem, 5vw, 2.1rem);  margin-left: 0;}
+
+    .beginning-box{ flex-direction: column; gap: 10px; }
+
+    .lens-frame{ width: 140px; height: 140px; }
+
+    .value-card{ padding: 28px 20px; }
+
+    .contact-info-item{ padding: 14px; }
+    .contact-form-panel{ padding: 24px; }
+
+    .btn-gold.w-sm-auto{ width: 100%; }
+}
+
+/* ---------- Phones (≤ 575.98px) ---------- */
+@media (max-width: 575.98px){
+
+    .announce-bar p{ font-size: .78rem; }
+
+    .ahd-hero-content h1{ font-size: 2.1rem; }
+
+    .story-img{ height: 260px; }
+
+    .timeline-card{ padding: 20px 16px; }
+
+    .gallery-item{ aspect-ratio: 1 / 1; }
+
+    .final-cta h2{ font-size: 1.7rem; }
+
+    .site-footer{ text-align: center; }
+    .footer-socials{ justify-content: center; }
+}
